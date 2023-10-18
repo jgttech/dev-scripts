@@ -5,7 +5,7 @@ function nvm-version() {
   echo "\`-> pnpm | $(pnpm --version)";
 }
 
-function nvm-lts() {
+function nvm-install-lts() {
   echo "nvm $(nvm --version)"
   echo "\n[BEFORE]"
   nvm-version;
