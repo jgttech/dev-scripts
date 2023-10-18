@@ -2,7 +2,7 @@ function nvm-version() {
   echo "+ nvm    | $(nvm --version)";
   echo "|-> npm  | $(npm --version)";
   echo "|-> yarn | $(yarn --version)";
-  echo "`-> pnpm | $(pnpm --version)";
+  echo "\`-> pnpm | $(pnpm --version)";
 }
 
 function nvm-lts() {
