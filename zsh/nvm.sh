@@ -1,5 +1,6 @@
 function nvm-version() {
   echo "+ nvm    | $(nvm --version)";
+  echo "|-> node | $(node --version)";
   echo "|-> npm  | $(npm --version)";
   echo "|-> yarn | $(yarn --version)";
   echo "\`-> pnpm | $(pnpm --version)";
