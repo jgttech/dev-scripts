@@ -1,1 +1,1 @@
-# export FSYNC_PATH="${HOME}/.fsync"
+export DOT_SCRIPTS="${HOME}/scripts"

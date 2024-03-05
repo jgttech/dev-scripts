@@ -7,3 +7,12 @@ function nvim-reinstall() {
 
   nvim;
 }
+
+function nvim-sync() {
+  cwd=$(pwd)
+
+  cd ${HOME}/.config/nvim;
+  git pull
+
+  cd $cwd
+}
