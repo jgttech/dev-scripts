@@ -8,7 +8,7 @@ function scripts-sync() {
   unset cwd
 }
 
-function scripts-push() {
+function scripts-update() {
   timestamp=$(date +%F\ %T)
   cwd=$(pwd)
 

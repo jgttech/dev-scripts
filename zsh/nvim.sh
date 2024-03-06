@@ -26,7 +26,7 @@ function nvim-scripts() {
   nvim ${HOME}/.scripts
 }
 
-function nvim-push() {
+function nvim-update() {
   timestamp=$(date +%F\ %T)
   cwd=$(pwd)
 
