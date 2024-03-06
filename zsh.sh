@@ -5,4 +5,5 @@ source ${HOME}/.scripts/zsh/docker.sh
 source ${HOME}/.scripts/zsh/git.sh
 source ${HOME}/.scripts/zsh/aliases.sh
 source ${HOME}/.scripts/zsh/nvim.sh
+source ${HOME}/.scripts/zsh/scripts.sh
 

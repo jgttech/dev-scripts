@@ -15,4 +15,27 @@ function nvim-sync() {
   git pull
 
   cd $cwd
+  unset cwd
 }
+
+function nvim-edit() {
+  nvim ${HOME}/.config/nvim
+}
+
+function nvim-scripts() {
+  nvim ${HOME}/.scripts
+}
+
+function nvim-push() {
+  timestamp=$(date +%F\ %T)
+  cwd=$(pwd)
+
+  cd ${HOME}/.config/nvim
+  git add .;
+  git commit -m "${timestamp} - UPDATES";
+  git push;
+
+  cd $cwd
+  unset cwd
+}
+
