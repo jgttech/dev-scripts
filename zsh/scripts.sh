@@ -1,3 +1,13 @@
+function scripts-sync() {
+  cwd=$(pwd)
+
+  cd ${HOME}/.scripts;
+  git pull
+
+  cd $cwd
+  unset cwd
+}
+
 function scripts-push() {
   timestamp=$(date +%F\ %T)
   cwd=$(pwd)
