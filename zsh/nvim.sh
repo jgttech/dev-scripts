@@ -5,6 +5,8 @@ function nvim-reinstall() {
   # Download a new copy of the NVIM config.
   gh repo clone jgttech/nvim ${HOME}/.config/nvim;
 
+  npm i -g typescript typescript-language-server;
+
   nvim;
 }
 
