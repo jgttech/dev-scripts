@@ -82,17 +82,21 @@ function merge {
 }
 
 function wip {
+  timestamp=$(date +%F\ %T)
+
   signer;
   git fetch;
   git add .;
-  git commit -m "WIP";
+  git commit -m "WIP ${timestamp}";
   git push;
 }
 
 function swip {
+  timestamp=$(date +%F\ %T)
+
   signer;
   git fetch;
   git add .;
-  git commit -S -m "WIP";
+  git commit -S -m "WIP ${timestamp}";
   git push;
 }
