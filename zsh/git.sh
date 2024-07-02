@@ -1,13 +1,73 @@
-alias add="git add";
-alias cm="git commit -m";
-alias pull="git pull";
-alias push="git push";
-alias clone="gh repo clone";
-alias status="git status";
-alias co="git fetch; git checkout";
-alias fetch="git fetch";
+# alias add="git add";
+# alias cm="git commit -m";
+# alias pull="git pull";
+# alias push="git push";
+# alias clone="gh repo clone";
+# alias status="git status";
+# alias co="git fetch; git checkout";
+# alias fetch="git fetch";
 
-function merge() {
+function signer {
+  export GPG_TTY=$(tty)
+}
+
+function add {
+  signer;
+  git add $@;
+}
+
+function cm {
+  signer;
+  git commit -m $@;
+}
+
+function cs {
+  signer;
+  git commit -S -m $@;
+}
+
+function pull {
+  signer;
+  git pull $@;
+}
+
+function push {
+  signer;
+  git push $@;
+}
+
+function clone {
+  signer;
+  git clone $@;
+}
+
+function status {
+  signer;
+  git status $@;
+}
+
+function co {
+  signer;
+  git fetch;
+  git checkout $@;
+}
+
+function fetch {
+  signer;
+  git fetch $@;
+}
+
+function branch {
+  git checkout -b $1;
+  git push --set-upstream origin $1;
+}
+
+function rebase {
+  branch=${1:-"main"}
+  git rebase $branch
+}
+
+function merge {
   CURRENT_GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD);
 
   echo "Merging from '$1' to '${CURRENT_GIT_BRANCH}'";
@@ -21,7 +81,18 @@ function merge() {
   git merge $1;
 }
 
-function branch() {
-  git checkout -b $1;
-  git push --set-upstream origin $1;
+function wip {
+  signer;
+  git fetch;
+  git add .;
+  git commit -m "WIP";
+  git push;
+}
+
+function swip {
+  signer;
+  git fetch;
+  git add .;
+  git commit -S -m "WIP";
+  git push;
 }
