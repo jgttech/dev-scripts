@@ -14,7 +14,7 @@ function drivers {
 
 }
 
-function gpu {
+function gpu-info {
   # Check active GPU driver
   glxinfo | grep -e OpenGL.vendor -e OpenGL.renderer
 }
@@ -22,4 +22,18 @@ function gpu {
 function gpu-list {
   # List available and default GPU
   switcherooctl list
+}
+
+function gpuls {
+  echo "[GPU Drivers]"
+  drivers
+  echo "\n"
+
+  echo "[GPU Info]"
+  gpu-info
+  echo "\n"
+
+  echo "[GPU List]"
+  gpu-list
+  echo "\n"
 }
